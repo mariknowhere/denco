@@ -779,11 +779,14 @@
   &-item {
     display: flex;
     cursor: pointer;
-    padding: 35px 0;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #e8e8e8;
+
+    &-wrapper {
+      padding: 35px 0;
+      border-bottom: 1px solid #e8e8e8;
+    }
 
     &-title {
       font-size: 18px;
@@ -799,6 +802,34 @@
     &-plus {
       height: fit-content;
       width: fit-content;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+
+      &-text {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 400;
+        color: #5c6770;
+        margin-top: 20px;
+      }
+
+      &-link {
+        display: inline-block;
+        text-decoration: none;
+        color: #6a41b2;
+        margin-top: 10px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &-fbs {
+        margin-top: 10px;
+      }
     }
   }
 

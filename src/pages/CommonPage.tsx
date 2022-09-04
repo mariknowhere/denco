@@ -1,7 +1,15 @@
-import React from 'react';
+import React, {FC, useState} from 'react';
 import styles from './CommonPage.module.scss';
 
-const CommonPage = () => {
+const CommonPage: FC = () => {
+  const [isFirstAccordionOpen, setFirstAccordionOpened] = useState(false);
+  const [isSecondAccordionOpen, setSecondAccordionOpened] = useState(false);
+  const [isThirdAccordionOpen, setThirdAccordionOpened] = useState(false);
+  const [isFourthAccordionOpen, setFourthAccordionOpened] = useState(false);
+  const [isFifthAccordionOpen, setFifthAccordionOpened] = useState(false);
+  const [isSixthAccordionOpen, setSixthAccordionOpened] = useState(false);
+  const [isSeventhAccordionOpen, setSeventhAccordionOpened] = useState(false);
+
   return (
     <div className={styles['main']}>
       <header className={styles['header-block']}>
@@ -474,41 +482,105 @@ const CommonPage = () => {
       <section className={styles['accordion-block']}>
         <h2 className={styles['accordion-block-title']}>Еще раз о самом главном</h2>
         <div className={styles['accordion-block-list']}>
-          <div className={styles['accordion-block-item']}>
-            <span className={styles['accordion-block-item-title']}>Сколько это стоит?</span>
-            <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+          <div className={styles['accordion-block-item-wrapper']}>
+            <div onClick={() => setFirstAccordionOpened(!isFirstAccordionOpen)} className={styles['accordion-block-item']}>
+              <span className={styles['accordion-block-item-title']}>Сколько это стоит?</span>
+              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+            </div>
+            {isFirstAccordionOpen && (
+              <div className={styles['accordion-block-item-info']}>
+              <span className={styles['accordion-block-item-info-text']}>
+                Цены считаются исходя из габаритов товара. Вы платите только за фактически оказанные складские услуги,
+                а именно: хранение, комплектация, упаковка, доставка. Оставте заявку, чтобы узнать подробнее.
+              </span>
+                <a href="#" className={styles['accordion-block-item-info-link']}>
+                  Оставить заявку
+                </a>
+              </div>
+            )}
           </div>
-          <div className={styles['accordion-block-item']}>
-            <span className={styles['accordion-block-item-title']}>
-              Работа ведется в моем личном кабинете маркетплейса?
-            </span>
-            <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+          <div className={styles['accordion-block-item-wrapper']}>
+            <div onClick={() => setSecondAccordionOpened(!isSecondAccordionOpen)} className={styles['accordion-block-item']}>
+              <span className={styles['accordion-block-item-title']}>Работа ведется в моем личном кабинете маркетплейса?</span>
+              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+            </div>
+            {isSecondAccordionOpen && (
+              <div className={styles['accordion-block-item-info']}>
+              <span className={styles['accordion-block-item-info-text']}>
+                Взаиморасчеты осуществляются между продавцом и маркетплейсом, мы не участвуем в этом процессе.
+              </span>
+              </div>
+            )}
           </div>
-          <div className={styles['accordion-block-item']}>
-            <span className={styles['accordion-block-item-title']}>Какой товар лучше продавать на маркетплейсах?</span>
-            <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+          <div className={styles['accordion-block-item-wrapper']}>
+            <div onClick={() => setThirdAccordionOpened(!isThirdAccordionOpen)} className={styles['accordion-block-item']}>
+              <span className={styles['accordion-block-item-title']}>Какой товар лучше продавать на маркетплейсах?</span>
+              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+            </div>
+            {isThirdAccordionOpen && (
+              <div className={styles['accordion-block-item-info']}>
+              <span className={styles['accordion-block-item-info-text']}>
+                Мы работаем с разными категориями, но у разных поставщиков товар продается по разному. Работа с нами
+                поможет делегировать складские и бумажные процессы и уделять  время равитию бизнеса.
+              </span>
+              </div>
+            )}
           </div>
-          <div className={styles['accordion-block-item']}>
-            <span className={styles['accordion-block-item-title']}>Что такое FBS?</span>
-            <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+          <div className={styles['accordion-block-item-wrapper']}>
+            <div onClick={() => setFourthAccordionOpened(!isFourthAccordionOpen)} className={styles['accordion-block-item']}>
+              <span className={styles['accordion-block-item-title']}>Что такое FBS?</span>
+              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+            </div>
+            {isFourthAccordionOpen && (
+              <div className={styles['accordion-block-item-info']}>
+              <span className={styles['accordion-block-item-info-text']}>
+                FBS (Fulfillment by Seller). Это схема работы с маркетплейсами, при которой продавец хранит товары на
+                складе Кактуса, когда поступает заказ, мы его собираем, маркируем, упаковываем и передаем курьеру
+                или в пункт приема маркетплейса. То есть, физически товары находятся на складе Кактуса, а
+                на маркетплейсе только витрина — карточки товаров.
+              </span>
+                <img src="images/fbs_list.svg" alt="fbs_list" className={styles['accordion-block-item-info-fbs']}/>
+              </div>
+            )}
           </div>
-          <div className={styles['accordion-block-item']}>
-            <span className={styles['accordion-block-item-title']}>
-              Вы берете процент от продаж на маркетплейсах?
-            </span>
-            <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+          <div className={styles['accordion-block-item-wrapper']}>
+            <div onClick={() => setFifthAccordionOpened(!isFifthAccordionOpen)} className={styles['accordion-block-item']}>
+              <span className={styles['accordion-block-item-title']}>Вы берете процент от продаж на маркетплейсах?</span>
+              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+            </div>
+            {isFifthAccordionOpen && (
+              <div className={styles['accordion-block-item-info']}>
+              <span className={styles['accordion-block-item-info-text']}>
+                Нет, мы не берем комиссию от продаж на маркетпейсах.
+              </span>
+              </div>
+            )}
           </div>
-          <div className={styles['accordion-block-item']}>
-            <span className={styles['accordion-block-item-title']}>
-              Как ускорить регистрацию на маркетплейсах?
-            </span>
-            <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+          <div className={styles['accordion-block-item-wrapper']}>
+            <div onClick={() => setSixthAccordionOpened(!isSixthAccordionOpen)} className={styles['accordion-block-item']}>
+              <span className={styles['accordion-block-item-title']}>Как ускорить регистрацию на маркетплейсах?</span>
+              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+            </div>
+            {isSixthAccordionOpen && (
+              <div className={styles['accordion-block-item-info']}>
+              <span className={styles['accordion-block-item-info-text']}>
+                У нас есть прямые контакты с маркетплейсами , но они не повлияют на ускорение регистрации.
+              </span>
+              </div>
+            )}
           </div>
-          <div className={styles['accordion-block-item']}>
-            <span className={styles['accordion-block-item-title']}>
-              Вы занимаетесь продвижением нашего товара на маркетплейсах?
-            </span>
-            <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+          <div className={styles['accordion-block-item-wrapper']}>
+            <div onClick={() => setSeventhAccordionOpened(!isSeventhAccordionOpen)} className={styles['accordion-block-item']}>
+              <span className={styles['accordion-block-item-title']}>Вы занимаетесь продвижением нашего товара на маркетплейсах?</span>
+              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+            </div>
+            {isSeventhAccordionOpen && (
+              <div className={styles['accordion-block-item-info']}>
+              <span className={styles['accordion-block-item-info-text']}>
+                Сейчас мы не занимаемся продвижением товара на маркетплейсах, но это направление нам интересно и мы работаем над ним.
+              </span>
+              </div>
+            )}
           </div>
         </div>
         <h3 className={styles['accordion-block-text']}>Продавайте на всех маркетплейсах с одного склада</h3>
