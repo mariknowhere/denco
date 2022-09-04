@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "SF Pro";
+  font-weight: 400;
+  font-style: normal;
+  src:  local("SF Pro Regular"),
+  local("SFPro-Regular"),
+  url("../fonts/SFPro-Regular.woff2") format('woff2'),
+  url("../fonts/SFPro-Regular.woff") format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  font-weight: 500;
+  font-style: normal;
+  src:  local("SF Pro Medium"),
+  local("SFPro-Medium"),
+  url("../fonts/SFPro-Medium.woff2") format('woff2'),
+  url("../fonts/SFPro-Medium.woff") format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  font-weight: 600;
+  font-style: normal;
+  src:  local("SF Pro Semibold"),
+  local("SFPro-Semibold"),
+  url("../fonts/SFPro-Semibold.woff2") format('woff2'),
+  url("../fonts/SFPro-Semibold.woff") format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  font-weight: 700;
+  font-style: normal;
+  src:  local("SF Pro Bold"),
+  local("SFPro-Bold"),
+  url("../fonts/SFPro-Bold.woff2") format('woff2'),
+  url("../fonts/SFPro-Bold.woff") format('woff');
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: "SF Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  font-family: "SF Pro", sans-serif;
+}
+
+h1 {
+  font-size: 39px;
+  line-height: 47px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 34px;
+  line-height: 42px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 34px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+}
