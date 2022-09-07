@@ -11,7 +11,7 @@ const CommonPage: FC = () => {
   const [isSeventhAccordionOpen, setSeventhAccordionOpened] = useState(false);
 
   return (
-    <div className={styles['main']}>
+    <>
       <header className={styles['header-block']}>
         <a href="/" className={styles['header-block-logo']}>
           <img src="images/logo.svg" alt="logo" />
@@ -49,13 +49,15 @@ const CommonPage: FC = () => {
             Продавайте на всех маркетплейсах с одного склада Ozon, Wildberries, Яндекс.Маркет, СберМегаМаркет,
             AliExpress и Леруа Мерлен.
           </span>
-          <a href="#" className={styles['main-block-button']}>
-            <span className={styles['main-block-button-text']}>Начать продавать</span>
-            <img src="images/white_arrow_right.svg" alt="arrow" />
-          </a>
+          <div className={styles['main-block-button-wrapper']}>
+            <a href="#" className={styles['main-block-button']}>
+              <span className={styles['main-block-button-text']}>Начать продавать</span>
+              <img src="images/white_arrow_right.svg" alt="arrow" />
+            </a>
+          </div>
           <a href='#' className={styles['main-block-link']}>
             <img src="images/play.svg" alt="play" className={styles['main-block-link-image']} />
-            <span>Видеопрезентация нашего сервиса</span>
+            <span className={styles['main-block-link-text']}>Видеопрезентация нашего сервиса</span>
           </a>
         </div>
         <div className={styles['main-block-image-wrapper']}>
@@ -63,7 +65,7 @@ const CommonPage: FC = () => {
         </div>
       </section>
       <section className={styles['market-block']}>
-        <div>
+        <div className={styles['market-block-image-wrapper']}>
           <img src="images/main_two.png" alt="main_two" className={styles['market-block-image']} />
         </div>
         <div className={styles['market-block-info']}>
@@ -84,12 +86,12 @@ const CommonPage: FC = () => {
             следите за статусами заказов в едином личном кабинете.
           </span>
         </div>
-        <div>
+        <div className={styles['market-block-image-wrapper']}>
           <img src="images/graphic.svg" alt="main_two" className={styles['market-block-graphic']} />
         </div>
       </section>
       <section className={styles['market-block']}>
-        <div>
+        <div className={styles['market-block-image-wrapper']}>
           <img src="images/main_three.webp" alt="main_three" className={styles['market-block-fbs']} />
         </div>
         <div className={styles['market-block-info']}>
@@ -109,7 +111,7 @@ const CommonPage: FC = () => {
         </div>
       </section>
       <section className={styles['market-block']}>
-        <div>
+        <div className={styles['market-block-image-wrapper']}>
           <img src="images/main_six.svg" alt="main_six" className={styles['market-block-image']} />
         </div>
         <div className={styles['market-block-info']}>
@@ -132,7 +134,7 @@ const CommonPage: FC = () => {
             <img src="images/white_arrow_right.svg" alt="arrow" />
           </a>
         </div>
-        <div>
+        <div className={styles['market-block-image-wrapper']}>
           <img src="images/main_five.webp" alt="main_five" className={styles['market-block-image-five']} />
         </div>
       </section>
@@ -145,7 +147,7 @@ const CommonPage: FC = () => {
             маркетплейсах.
           </span>
         </div>
-        <div>
+        <div className={styles['market-block-image-wrapper']}>
           <img src="images/main_four.svg" alt="main_four" className={styles['market-block-fbs']} />
         </div>
       </section>
@@ -194,13 +196,23 @@ const CommonPage: FC = () => {
             </a>
           </div>
           <div className={styles['markets-block-images']}>
-            <img src="images/ozon.svg" alt="ozon" className={styles['markets-block-image']} />
-            <img src="images/wild.svg" alt="wild" className={styles['markets-block-image']} />
-            <img src="images/yandex.svg" alt="yandex" className={styles['markets-block-image']} />
-            <img src="images/sber.svg" alt="sber" className={styles['markets-block-image']} />
-            <img src="images/ali.svg" alt="ali" className={styles['markets-block-image']} />
-            <img src="images/leroy.svg" alt="leroy" className={styles['markets-block-image']} />
+            <div className={styles['markets-block-images-row']}>
+              <img src="images/ozon.svg" alt="ozon" className={styles['markets-block-image']} />
+              <img src="images/wild.svg" alt="wild" className={styles['markets-block-image']} />
+            </div>
+            <div className={styles['markets-block-images-row']}>
+              <img src="images/yandex.svg" alt="yandex" className={styles['markets-block-image']} />
+              <img src="images/sber.svg" alt="sber" className={styles['markets-block-image']} />
+            </div>
+            <div className={styles['markets-block-images-row']}>
+              <img src="images/ali.svg" alt="ali" className={styles['markets-block-image']} />
+              <img src="images/leroy.svg" alt="leroy" className={styles['markets-block-image']} />
+            </div>
           </div>
+          <a href="#" className={styles['markets-block-mobile-link']}>
+            <span className={styles['markets-block-link-text']}>Подробнее</span>
+            <img src="images/white_arrow_right.svg" alt="arrow" />
+          </a>
         </div>
       </section>
       <section className={styles['price-block']}>
@@ -216,7 +228,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>49,5₽</h4>
-              <span className={styles['price-block-item-description']}>короб/грузовое место</span>
+              <span className={styles['price-block-item-secondary-description']}>короб/грузовое место</span>
             </div>
           </div>
           <div className={styles['price-block-item']}>
@@ -229,7 +241,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>от 7,2₽</h4>
-              <span className={styles['price-block-item-description']}>единица товара</span>
+              <span className={styles['price-block-item-secondary-description']}>единица товара</span>
             </div>
           </div>
           <div className={styles['price-block-item']}>
@@ -243,7 +255,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>33₽</h4>
-              <span className={styles['price-block-item-description']}>единица товара</span>
+              <span className={styles['price-block-item-secondary-description']}>единица товара</span>
             </div>
           </div>
           <div className={styles['price-block-item']}>
@@ -253,7 +265,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>от 8,6₽</h4>
-              <span className={styles['price-block-item-description']}>единица товара</span>
+              <span className={styles['price-block-item-secondary-description']}>единица товара</span>
             </div>
           </div>
           <div className={styles['price-block-item']}>
@@ -266,7 +278,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>54,5₽</h4>
-              <span className={styles['price-block-item-description']}>грузовое место</span>
+              <span className={styles['price-block-item-secondary-description']}>грузовое место</span>
             </div>
           </div>
           <div className={styles['price-block-item']}>
@@ -278,7 +290,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>от 12,1₽</h4>
-              <span className={styles['price-block-item-right-description']}>заказ</span>
+              <span className={styles['price-block-item-secondary-description']}>заказ</span>
             </div>
           </div>
           <div className={styles['price-block-item']}>
@@ -290,7 +302,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>от 8,3₽</h4>
-              <span className={styles['price-block-item-description']}>единица товара</span>
+              <span className={styles['price-block-item-secondary-description']}>единица товара</span>
             </div>
           </div>
           <div className={styles['price-block-item']}>
@@ -302,7 +314,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>от 33₽</h4>
-              <span className={styles['price-block-item-description']}>один заказ</span>
+              <span className={styles['price-block-item-secondary-description']}>один заказ</span>
             </div>
           </div>
           <div className={styles['price-block-item']}>
@@ -314,7 +326,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>от 0,6₽</h4>
-              <span className={styles['price-block-item-description']}>единица товара/сутки</span>
+              <span className={styles['price-block-item-secondary-description']}>единица товара/сутки</span>
             </div>
           </div>
           <div className={styles['price-block-item']}>
@@ -326,7 +338,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>28,6₽</h4>
-              <span className={styles['price-block-item-description']}>паллет/сутки</span>
+              <span className={styles['price-block-item-secondary-description']}>паллет/сутки</span>
             </div>
           </div>
           <div className={styles['price-block-item']}>
@@ -338,7 +350,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['price-block-item-text']}>
               <h4 className={styles['price-block-item-title']}>6,6₽</h4>
-              <span className={styles['price-block-item-description']}>единица товара</span>
+              <span className={styles['price-block-item-secondary-description']}>единица товара</span>
             </div>
           </div>
         </div>
@@ -349,7 +361,9 @@ const CommonPage: FC = () => {
           <span className={styles['price-block-bottom-text']}>
             ** Тарифы указаны без учета НДС - размер НДС определяется согласно законодательству РФ.
           </span>
-          <a href="#" className={styles['price-block-bottom-link']}>Скачать полный прайс</a>
+          <div className={styles['price-block-bottom-link-wrapper']}>
+            <a href="#" className={styles['price-block-bottom-link']}>Скачать полный прайс</a>
+          </div>
         </div>
         <div className={styles['price-block-bottom-button-wrapper']}>
           <a href="#" className={styles['price-block-button']}>
@@ -404,8 +418,8 @@ const CommonPage: FC = () => {
         <div className={styles['outsource-block-container']}>
           <h2 className={styles['outsource-block-title']}>Работайте со складом на аутсорсе</h2>
           <span className={styles['outsource-block-description']}>
-          Мы возьмем на себя всю работу со складом, чтобы у вас<br /> появилось больше времени на развитие бизнеса.
-        </span>
+            Мы возьмем на себя всю работу со складом, чтобы у вас<br /> появилось больше времени на развитие бизнеса.
+          </span>
           <div className={styles['outsource-block-table']}>
             <div className={styles['outsource-block-item']}>
               <div className={styles['outsource-block-item-left']} />
@@ -474,6 +488,82 @@ const CommonPage: FC = () => {
                 <span className={styles['outsource-block-item-right-text']}>
                   Необходимо платить за аренду склада и зарплату сотрудникам вне зависимости от продаж
                 </span>
+              </div>
+            </div>
+            <div className={styles['outsource-block-header-mobile-item']}>
+              <div className={styles['outsource-block-item-center']}>
+                <h4>Через Кактус</h4>
+              </div>
+              <div className={styles['outsource-block-item-right']}>
+                <h4>Самостоятельно</h4>
+              </div>
+            </div>
+            <div className={styles['outsource-block-mobile-item']}>
+              <div className={styles['outsource-block-item-left']}>
+                <h3>Личный кабинет</h3>
+              </div>
+              <div className={styles['outsource-block-mobile-item-content']}>
+                <div className={styles['outsource-block-item-center']}>
+                    <span className={styles['outsource-block-item-center-text']}>
+                      Один личный кабинет для всех маркетплейсов
+                    </span>
+                </div>
+                <div className={styles['outsource-block-item-right']}>
+                    <span className={styles['outsource-block-item-right-text']}>
+                      Личный кабинет для каждого маркетплейса
+                    </span>
+                </div>
+              </div>
+            </div>
+            <div className={styles['outsource-block-mobile-item']}>
+              <div className={styles['outsource-block-item-left']}>
+                <h3>Работа с маркетплейсами</h3>
+              </div>
+              <div className={styles['outsource-block-mobile-item-content']}>
+                <div className={styles['outsource-block-item-center']}>
+                    <span className={styles['outsource-block-item-center-text']}>
+                      Достаточно отгрузить партию товара на склад Кактуса
+                    </span>
+                </div>
+                <div className={styles['outsource-block-item-right']}>
+                    <span className={styles['outsource-block-item-right-text']}>
+                      Необходимо отгрузить партию товара в каждый маркетплейс
+                    </span>
+                </div>
+              </div>
+            </div>
+            <div className={styles['outsource-block-mobile-item']}>
+              <div className={styles['outsource-block-item-left']}>
+                <h3>Сборка и упаковка заказов</h3>
+              </div>
+              <div className={styles['outsource-block-mobile-item-content']}>
+                <div className={styles['outsource-block-item-center']}>
+                    <span className={styles['outsource-block-item-center-text']}>
+                      Кактус соберет, упакует и доставит заказ согласно требованиям маркетплейса
+                    </span>
+                </div>
+                <div className={styles['outsource-block-item-right']}>
+                    <span className={styles['outsource-block-item-right-text']}>
+                      Вы сами собираете, упаковываете и доставляете заказ
+                    </span>
+                </div>
+              </div>
+            </div>
+            <div className={styles['outsource-block-mobile-item']}>
+              <div className={styles['outsource-block-item-left']}>
+                <h3>Затраты на складские операции</h3>
+              </div>
+              <div className={styles['outsource-block-mobile-item-content']}>
+                <div className={styles['outsource-block-item-center']}>
+                    <span className={styles['outsource-block-item-center-text']}>
+                      Вы платите только за услуги оказанные по факту
+                    </span>
+                </div>
+                <div className={styles['outsource-block-item-right']}>
+                    <span className={styles['outsource-block-item-right-text']}>
+                      Необходимо платить за аренду склада и зарплату сотрудникам вне зависимости от продаж
+                    </span>
+                </div>
               </div>
             </div>
           </div>
@@ -591,7 +681,7 @@ const CommonPage: FC = () => {
           </a>
         </div>
       </section>
-    </div>
+    </>
   );
 }
 
