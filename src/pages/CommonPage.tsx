@@ -12,34 +12,65 @@ const CommonPage: FC = () => {
 
   return (
     <>
+      <header className={styles['header']}>
+        <div className={styles['header-container']}>
+          <div className={styles['header-left']}>
+            <a href="/dostavka-i-oplata" className={styles['header-link']}>
+              Условия доставки
+            </a>
+            <a href="/dostavka-i-oplata" className={styles['header-link']}>
+              Условия оплаты
+            </a>
+            <a href="/opt" className={styles['header-link']}>
+              Опт
+            </a>
+            <a href="/fulfillment" className={styles['header-link']}>
+              Фулфилмент
+            </a>
+          </div>
+          <div className={styles['header-right']}>
+            <a href="/kontakty" className={styles['header-link']}>
+              Контактная информация
+            </a>
+            <a target="_blank" href="tel:+74998992545" className={styles['header-link']}>
+              +7 (499) 899-25-45
+            </a>
+          </div>
+        </div>
+      </header>
       <header className={styles['header-block']}>
         <a href="/" className={styles['header-block-logo']}>
-          <img src="images/logo.svg" alt="logo" />
+          <img src="images/fulfillment/logo.svg" alt="logo" />
         </a>
         <div className={styles['header-block-links']}>
-          <a href="#" className={styles['header-block-link']}>Контакты</a>
-          <a href="#" className={styles['header-block-link']}>Стать партнером</a>
+          <a href="/kontakty" className={styles['header-block-link']}>Контакты</a>
+          <a href="/opt-registration" className={styles['header-block-link']}>Стать партнером</a>
         </div>
       </header>
       <section className={styles['navbar-block']}>
         <div className={styles['navbar-block-catalog']}>
-          <img src="images/hamburger.svg" alt="hamburger" className={styles['navbar-block-catalog-image']}/>
+          <img src="images/fulfillment/hamburger.svg" alt="hamburger" className={styles['navbar-block-catalog-image']}/>
           <span className={styles['navbar-block-catalog-text']}>Каталог</span>
         </div>
         <div className={styles['navbar-block-search']}>
           <label htmlFor="search" className={styles['navbar-block-search-label']}>
-            <img src="images/search.svg" alt="search" />
+            <img src="images/fulfillment/search.svg" alt="search" />
           </label>
           <input placeholder="Я ищу..." id="search" type="text" className={styles['navbar-block-search-input']} />
           <button className={styles['navbar-block-search-button']} >Найти</button>
         </div>
         <div className={styles['navbar-block-list']}>
+          
+        <a href="/lk">
           <div className={styles['navbar-block-item']}>
-            <img src="images/open.svg" alt="open" />
+            <img src="images/fulfillment/open.svg" alt="open" />
           </div>
-          <div className={styles['navbar-block-item']}>
-            <img src="images/basket.svg" alt="open" />
-          </div>
+          </a>
+          <a href='/basket'>
+            <div className={styles['navbar-block-item']}>
+              <img src="images/fulfillment/basket.svg" alt="open" />
+            </div>
+          </a>
         </div>
       </section>
       <section className={styles['main-block']}>
@@ -50,26 +81,26 @@ const CommonPage: FC = () => {
             AliExpress и Леруа Мерлен.
           </span>
           <div className={styles['main-block-button-wrapper']}>
-            <a href="#" className={styles['main-block-button']}>
+            <a href="opt-registration" className={styles['main-block-button']}>
               <span className={styles['main-block-button-text']}>Начать продавать</span>
-              <img src="images/white_arrow_right.svg" alt="arrow" />
+              <img src="images/fulfillment/white_arrow_right.svg" alt="arrow" />
             </a>
           </div>
-          <a href='#' className={styles['main-block-link']}>
-            <img src="images/play.svg" alt="play" className={styles['main-block-link-image']} />
-            <span className={styles['main-block-link-text']}>Видеопрезентация нашего сервиса</span>
+          <a href='https://disk.yandex.ru/i/QPfIgSFMFJeuUg' className={styles['main-block-link']}>
+            <img src="images/fulfillment/play.svg" alt="play" className={styles['main-block-link-image']} />
+            <span className={styles['main-block-link-text']}>Скачать Прайс-лист</span>
           </a>
         </div>
         <div className={styles['main-block-image-wrapper']}>
-          <img src="images/main.svg" alt="main" className={styles['main-block-image']} />
+          <img src="images/fulfillment/main.png" alt="main" className={styles['main-block-image']} />
         </div>
       </section>
       <section className={styles['market-block']}>
         <div className={styles['market-block-image-wrapper']}>
-          <img src="images/main_two.png" alt="main_two" className={styles['market-block-image']} />
+          <img src="images/fulfillment/main_two.png" alt="main_two" className={styles['market-block-image']} />
         </div>
         <div className={styles['market-block-info']}>
-          <img src="images/atom.svg" alt="atom" className={styles['market-block-atom']} />
+          <img src="images/fulfillment/atom.svg" alt="atom" className={styles['market-block-atom']} />
           <h2>Все маркетплейсы в одном кабинете</h2>
           <span className={styles['main-block-description']}>
             Работайте с маркетплейсами и другими каналами продаж на одной площадке. Это поможет контролировать все
@@ -79,7 +110,7 @@ const CommonPage: FC = () => {
       </section>
       <section className={styles['market-block']}>
         <div className={styles['market-block-info']}>
-          <img src="images/date.svg" alt="date" className={styles['market-block-atom']} />
+          <img src="images/fulfillment/date.svg" alt="date" className={styles['market-block-atom']} />
           <h2>Следите за показателями продаж</h2>
           <span className={styles['main-block-description']}>
             Отслеживайте динамику, прогнозы и товарооборот со всех каналов продаж. Контролируйте остатки товаров и
@@ -87,32 +118,32 @@ const CommonPage: FC = () => {
           </span>
         </div>
         <div className={styles['market-block-image-wrapper']}>
-          <img src="images/graphic.svg" alt="main_two" className={styles['market-block-graphic']} />
+          <img src="images/fulfillment/graphic.svg" alt="main_two" className={styles['market-block-graphic']} />
         </div>
       </section>
       <section className={styles['market-block']}>
         <div className={styles['market-block-image-wrapper']}>
-          <img src="images/main_three.webp" alt="main_three" className={styles['market-block-fbs']} />
+          <img src="images/fulfillment/main_three.webp" alt="main_three" className={styles['market-block-fbs']} />
         </div>
         <div className={styles['market-block-info']}>
           <div className={styles['market-block-images']}>
-            <img src="images/fbs.svg" alt="fbs" className={styles['market-block-fbs']} />
-            <img src="images/question.svg" alt="question" className={styles['market-block-question']} />
+            <img src="images/fulfillment/fbs.svg" alt="fbs" className={styles['market-block-fbs']} />
+            <img src="images/fulfillment/question.svg" alt="question" className={styles['market-block-question']} />
           </div>
           <h2>Работайте по схеме FBS</h2>
           <span className={styles['main-block-description']}>
             Наши интеграции с маркетплейсами позволяют работать по схеме FBS. Это позволит хранить товар на одном складе
-            и продавать на всех маркетплейсах со склада Кактус, не замораживая сток и деньги.
+            и продавать на всех маркетплейсах со склада DENCO, не замораживая сток и деньги.
           </span>
-          <a href="#" className={styles['market-block-link']}>
+          <a href="opt-registration" className={styles['market-block-link']}>
             <span>Подробнее</span>
-            <img src="images/purple_arrow_right.svg" alt="arrow" />
+            <img src="images/fulfillment/purple_arrow_right.svg" alt="arrow" />
           </a>
         </div>
       </section>
       <section className={styles['market-block']}>
         <div className={styles['market-block-image-wrapper']}>
-          <img src="images/main_six.svg" alt="main_six" className={styles['market-block-image']} />
+          <img src="images/fulfillment/main_six.png" alt="main_six" className={styles['market-block-image']} />
         </div>
         <div className={styles['market-block-info']}>
           <h2>Один склад для всех каналов продаж</h2>
@@ -129,18 +160,18 @@ const CommonPage: FC = () => {
             Фулфилмент возьмет на себя заботы хранения, упаковки и доставки товаров, поможет расширить каналы
             продаж и сократить операционные расходы.
           </span>
-          <a href="#" className={styles['main-block-button']}>
+          <a href="opt-registration" className={styles['main-block-button']}>
             <span className={styles['main-block-button-text']}>Узнать подробнее</span>
-            <img src="images/white_arrow_right.svg" alt="arrow" />
+            <img src="images/fulfillment/white_arrow_right.svg" alt="arrow" />
           </a>
         </div>
         <div className={styles['market-block-image-wrapper']}>
-          <img src="images/main_five.webp" alt="main_five" className={styles['market-block-image-five']} />
+          <img src="images/fulfillment/main_five.webp" alt="main_five" className={styles['market-block-image-five']} />
         </div>
       </section>
       <section className={styles['market-block']}>
         <div className={styles['market-block-info']}>
-          <img src="images/book.svg" alt="fbs" className={styles['market-block-book']} />
+          <img src="images/fulfillment/book.svg" alt="fbs" className={styles['market-block-book']} />
           <h2>Минимальный порог входа</h2>
           <span className={styles['main-block-description']}>
             Независимо от величины ассортимента, достаточно одной позиции товара, чтобы начать продавать на
@@ -148,23 +179,23 @@ const CommonPage: FC = () => {
           </span>
         </div>
         <div className={styles['market-block-image-wrapper']}>
-          <img src="images/main_four.svg" alt="main_four" className={styles['market-block-fbs']} />
+          <img src="images/fulfillment/main_four.svg" alt="main_four" className={styles['market-block-fbs']} />
         </div>
       </section>
       <section className={styles['news-block']}>
         <div className={styles['news-block-container']}>
           <div className={styles['news-block-images']}>
             <div className={styles['news-block-image-wrapper']}>
-              <img src="images/atom_big.svg" alt="atom" />
+              <img src="images/fulfillment/atom_big.svg" alt="atom" />
             </div>
             <div className={styles['news-block-image-wrapper']}>
-              <img src="images/date_big.svg" alt="date" />
+              <img src="images/fulfillment/date_big.svg" alt="date" />
             </div>
             <div className={styles['news-block-image-wrapper']}>
-              <img src="images/fbs_big.svg" alt="fbs" />
+              <img src="images/fulfillment/fbs_big.svg" alt="fbs" />
             </div>
             <div className={styles['news-block-image-wrapper']}>
-              <img src="images/book_big.svg" alt="book" />
+              <img src="images/fulfillment/book_big.svg" alt="book" />
             </div>
           </div>
           <div className={styles['news-block-info']}>
@@ -176,7 +207,7 @@ const CommonPage: FC = () => {
               продавать на маркетплейсах.
             </span>
             </div>
-            <a href="#" className={styles['news-block-link']}>
+            <a href="opt-registration" className={styles['news-block-link']}>
               <span className={styles['news-block-link-text']}>Оставить заявку</span>
             </a>
           </div>
@@ -190,35 +221,35 @@ const CommonPage: FC = () => {
               Используйте единый сток чтобы продавать одновременно в интернет-магазине и на маркетплейсах, а также на
               экспорт по всему миру.
             </span>
-            <a href="#" className={styles['markets-block-link']}>
+            <a href="opt-registration" className={styles['markets-block-link']}>
               <span className={styles['markets-block-link-text']}>Подробнее</span>
-              <img src="images/white_arrow_right.svg" alt="arrow" />
+              <img src="images/fulfillment/white_arrow_right.svg" alt="arrow" />
             </a>
           </div>
           <div className={styles['markets-block-images']}>
             <div className={styles['markets-block-images-row']}>
-              <img src="images/ozon.svg" alt="ozon" className={styles['markets-block-image']} />
-              <img src="images/wild.svg" alt="wild" className={styles['markets-block-image']} />
+              <img src="images/fulfillment/ozon.svg" alt="ozon" className={styles['markets-block-image']} />
+              <img src="images/fulfillment/wild.svg" alt="wild" className={styles['markets-block-image']} />
             </div>
             <div className={styles['markets-block-images-row']}>
-              <img src="images/yandex.svg" alt="yandex" className={styles['markets-block-image']} />
-              <img src="images/sber.svg" alt="sber" className={styles['markets-block-image']} />
+              <img src="images/fulfillment/yandex.svg" alt="yandex" className={styles['markets-block-image']} />
+              <img src="images/fulfillment/sber.svg" alt="sber" className={styles['markets-block-image']} />
             </div>
             <div className={styles['markets-block-images-row']}>
-              <img src="images/ali.svg" alt="ali" className={styles['markets-block-image']} />
-              <img src="images/leroy.svg" alt="leroy" className={styles['markets-block-image']} />
+              <img src="images/fulfillment/ali.svg" alt="ali" className={styles['markets-block-image']} />
+              <img src="images/fulfillment/leroy.svg" alt="leroy" className={styles['markets-block-image']} />
             </div>
           </div>
           <a href="#" className={styles['markets-block-mobile-link']}>
             <span className={styles['markets-block-link-text']}>Подробнее</span>
-            <img src="images/white_arrow_right.svg" alt="arrow" />
+            <img src="images/fulfillment/white_arrow_right.svg" alt="arrow" />
           </a>
         </div>
       </section>
       <section className={styles['price-block']}>
         <h2 className={styles['price-block-title']}>Стоимость фулфилмента</h2>
         <div className={styles['price-block-button-wrapper']}>
-          <a href="#" className={styles['price-block-button']}>Полный прайс</a>
+          <a href="https://disk.yandex.ru/i/QPfIgSFMFJeuUg" className={styles['price-block-button']}>Полный прайс</a>
         </div>
         <div className={styles['price-block-list']}>
           <div className={styles['price-block-item']}>
@@ -362,13 +393,13 @@ const CommonPage: FC = () => {
             ** Тарифы указаны без учета НДС - размер НДС определяется согласно законодательству РФ.
           </span>
           <div className={styles['price-block-bottom-link-wrapper']}>
-            <a href="#" className={styles['price-block-bottom-link']}>Скачать полный прайс</a>
+            <a href="https://disk.yandex.ru/i/QPfIgSFMFJeuUg" className={styles['price-block-bottom-link']}>Скачать полный прайс</a>
           </div>
         </div>
         <div className={styles['price-block-bottom-button-wrapper']}>
-          <a href="#" className={styles['price-block-button']}>
+          <a href="opt-registration" className={styles['price-block-button']}>
             Рассчитать стоимость
-            <img src="images/purple_arrow_right.svg" alt="arrow" className={styles['price-block-button-arrow']} />
+            <img src="images/fulfillment/purple_arrow_right.svg" alt="arrow" className={styles['price-block-button-arrow']} />
           </a>
         </div>
       </section>
@@ -377,7 +408,7 @@ const CommonPage: FC = () => {
         <div className={styles['schemas-block-cards']}>
           <div className={styles['schemas-block-card']}>
             <div className={styles['schemas-block-card-image-wrapper']}>
-              <img src="images/schema_one.svg" alt="schema_one" className={styles['schemas-block-card-image']} />
+              <img src="images/fulfillment/schema_one.svg" alt="schema_one" className={styles['schemas-block-card-image']} />
             </div>
             <div className={styles['schemas-block-card-number-wrapper']}>
               <span className={styles['schemas-block-card-number-first']}>1</span>
@@ -390,19 +421,19 @@ const CommonPage: FC = () => {
           </div>
           <div className={styles['schemas-block-card']}>
             <div className={styles['schemas-block-card-image-wrapper']}>
-              <img src="images/schema_two.svg" alt="schema_two" className={styles['schemas-block-card-image-small']} />
+              <img src="images/fulfillment/schema_two.svg" alt="schema_two" className={styles['schemas-block-card-image-small']} />
             </div>
             <div className={styles['schemas-block-card-number-wrapper']}>
               <span className={styles['schemas-block-card-number']}>2</span>
             </div>
             <h4 className={styles['schemas-block-card-title']}>Прием товара</h4>
             <span className={styles['schemas-block-card-description']}>
-              Принимаем ваш товар на складе Кактуса. При необходимости маркируем и готовим товар к продаже.
+              Принимаем ваш товар на складе DENCO. При необходимости маркируем и готовим товар к продаже.
             </span>
           </div>
           <div className={styles['schemas-block-card']}>
             <div className={styles['schemas-block-card-image-wrapper']}>
-              <img src="images/schema_three.svg" alt="schema_three" className={styles['schemas-block-card-image-small']} />
+              <img src="images/fulfillment/schema_three.svg" alt="schema_three" className={styles['schemas-block-card-image-small']} />
             </div>
             <div className={styles['schemas-block-card-number-wrapper']}>
               <span className={styles['schemas-block-card-number-last']}>3</span>
@@ -424,7 +455,7 @@ const CommonPage: FC = () => {
             <div className={styles['outsource-block-item']}>
               <div className={styles['outsource-block-item-left']} />
               <div className={styles['outsource-block-item-center']}>
-                <h4>Через Кактус</h4>
+                <h4>Через DENCO</h4>
               </div>
               <div className={styles['outsource-block-item-right']}>
                 <h4>Самостоятельно</h4>
@@ -451,7 +482,7 @@ const CommonPage: FC = () => {
               </div>
               <div className={styles['outsource-block-item-center']}>
                 <span className={styles['outsource-block-item-center-text']}>
-                  Достаточно отгрузить партию товара на склад Кактуса
+                  Достаточно отгрузить партию товара на склад DENCO
                 </span>
               </div>
               <div className={styles['outsource-block-item-right']}>
@@ -466,7 +497,7 @@ const CommonPage: FC = () => {
               </div>
               <div className={styles['outsource-block-item-center']}>
                 <span className={styles['outsource-block-item-center-text']}>
-                  Кактус соберет, упакует и доставит заказ согласно требованиям маркетплейса
+                  DENCO соберет, упакует и доставит заказ согласно требованиям маркетплейса
                 </span>
               </div>
               <div className={styles['outsource-block-item-right']}>
@@ -492,7 +523,7 @@ const CommonPage: FC = () => {
             </div>
             <div className={styles['outsource-block-header-mobile-item']}>
               <div className={styles['outsource-block-item-center']}>
-                <h4>Через Кактус</h4>
+                <h4>Через DENCO</h4>
               </div>
               <div className={styles['outsource-block-item-right']}>
                 <h4>Самостоятельно</h4>
@@ -522,7 +553,7 @@ const CommonPage: FC = () => {
               <div className={styles['outsource-block-mobile-item-content']}>
                 <div className={styles['outsource-block-item-center']}>
                     <span className={styles['outsource-block-item-center-text']}>
-                      Достаточно отгрузить партию товара на склад Кактуса
+                      Достаточно отгрузить партию товара на склад DENCO
                     </span>
                 </div>
                 <div className={styles['outsource-block-item-right']}>
@@ -539,7 +570,7 @@ const CommonPage: FC = () => {
               <div className={styles['outsource-block-mobile-item-content']}>
                 <div className={styles['outsource-block-item-center']}>
                     <span className={styles['outsource-block-item-center-text']}>
-                      Кактус соберет, упакует и доставит заказ согласно требованиям маркетплейса
+                      DENCO соберет, упакует и доставит заказ согласно требованиям маркетплейса
                     </span>
                 </div>
                 <div className={styles['outsource-block-item-right']}>
@@ -575,7 +606,7 @@ const CommonPage: FC = () => {
           <div className={styles['accordion-block-item-wrapper']}>
             <div onClick={() => setFirstAccordionOpened(!isFirstAccordionOpen)} className={styles['accordion-block-item']}>
               <span className={styles['accordion-block-item-title']}>Сколько это стоит?</span>
-              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+              <img src="images/fulfillment/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
             </div>
             {isFirstAccordionOpen && (
               <div className={styles['accordion-block-item-info']}>
@@ -583,7 +614,7 @@ const CommonPage: FC = () => {
                 Цены считаются исходя из габаритов товара. Вы платите только за фактически оказанные складские услуги,
                 а именно: хранение, комплектация, упаковка, доставка. Оставте заявку, чтобы узнать подробнее.
               </span>
-                <a href="#" className={styles['accordion-block-item-info-link']}>
+                <a href="opt-registration" className={styles['accordion-block-item-info-link']}>
                   Оставить заявку
                 </a>
               </div>
@@ -592,7 +623,7 @@ const CommonPage: FC = () => {
           <div className={styles['accordion-block-item-wrapper']}>
             <div onClick={() => setSecondAccordionOpened(!isSecondAccordionOpen)} className={styles['accordion-block-item']}>
               <span className={styles['accordion-block-item-title']}>Работа ведется в моем личном кабинете маркетплейса?</span>
-              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+              <img src="images/fulfillment/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
             </div>
             {isSecondAccordionOpen && (
               <div className={styles['accordion-block-item-info']}>
@@ -605,7 +636,7 @@ const CommonPage: FC = () => {
           <div className={styles['accordion-block-item-wrapper']}>
             <div onClick={() => setThirdAccordionOpened(!isThirdAccordionOpen)} className={styles['accordion-block-item']}>
               <span className={styles['accordion-block-item-title']}>Какой товар лучше продавать на маркетплейсах?</span>
-              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+              <img src="images/fulfillment/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
             </div>
             {isThirdAccordionOpen && (
               <div className={styles['accordion-block-item-info']}>
@@ -619,24 +650,24 @@ const CommonPage: FC = () => {
           <div className={styles['accordion-block-item-wrapper']}>
             <div onClick={() => setFourthAccordionOpened(!isFourthAccordionOpen)} className={styles['accordion-block-item']}>
               <span className={styles['accordion-block-item-title']}>Что такое FBS?</span>
-              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+              <img src="images/fulfillment/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
             </div>
             {isFourthAccordionOpen && (
               <div className={styles['accordion-block-item-info']}>
               <span className={styles['accordion-block-item-info-text']}>
                 FBS (Fulfillment by Seller). Это схема работы с маркетплейсами, при которой продавец хранит товары на
-                складе Кактуса, когда поступает заказ, мы его собираем, маркируем, упаковываем и передаем курьеру
-                или в пункт приема маркетплейса. То есть, физически товары находятся на складе Кактуса, а
+                складе DENCO, когда поступает заказ, мы его собираем, маркируем, упаковываем и передаем курьеру
+                или в пункт приема маркетплейса. То есть, физически товары находятся на складе DENCO, а
                 на маркетплейсе только витрина — карточки товаров.
               </span>
-                <img src="images/fbs_list.svg" alt="fbs_list" className={styles['accordion-block-item-info-fbs']}/>
+                <img src="images/fulfillment/fbs_list.svg" alt="fbs_list" className={styles['accordion-block-item-info-fbs']}/>
               </div>
             )}
           </div>
           <div className={styles['accordion-block-item-wrapper']}>
             <div onClick={() => setFifthAccordionOpened(!isFifthAccordionOpen)} className={styles['accordion-block-item']}>
               <span className={styles['accordion-block-item-title']}>Вы берете процент от продаж на маркетплейсах?</span>
-              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+              <img src="images/fulfillment/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
             </div>
             {isFifthAccordionOpen && (
               <div className={styles['accordion-block-item-info']}>
@@ -649,7 +680,7 @@ const CommonPage: FC = () => {
           <div className={styles['accordion-block-item-wrapper']}>
             <div onClick={() => setSixthAccordionOpened(!isSixthAccordionOpen)} className={styles['accordion-block-item']}>
               <span className={styles['accordion-block-item-title']}>Как ускорить регистрацию на маркетплейсах?</span>
-              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+              <img src="images/fulfillment/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
             </div>
             {isSixthAccordionOpen && (
               <div className={styles['accordion-block-item-info']}>
@@ -662,7 +693,7 @@ const CommonPage: FC = () => {
           <div className={styles['accordion-block-item-wrapper']}>
             <div onClick={() => setSeventhAccordionOpened(!isSeventhAccordionOpen)} className={styles['accordion-block-item']}>
               <span className={styles['accordion-block-item-title']}>Вы занимаетесь продвижением нашего товара на маркетплейсах?</span>
-              <img src="images/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
+              <img src="images/fulfillment/plus.svg" alt="plus" className={styles['accordion-block-item-plus']} />
             </div>
             {isSeventhAccordionOpen && (
               <div className={styles['accordion-block-item-info']}>
@@ -675,12 +706,86 @@ const CommonPage: FC = () => {
         </div>
         <h3 className={styles['accordion-block-text']}>Продавайте на всех маркетплейсах с одного склада</h3>
         <div className={styles['accordion-block-button-wrapper']}>
-          <a href="#" className={styles['accordion-block-button']}>
+          <a href="opt-registration" className={styles['accordion-block-button']}>
             Начать продавать
-            <img src="images/purple_arrow_right.svg" alt="arrow" className={styles['accordion-block-button-arrow']} />
+            <img src="images/fulfillment/purple_arrow_right.svg" alt="arrow" className={styles['accordion-block-button-arrow']} />
           </a>
         </div>
       </section>
+      <footer className={styles['footer']}>
+        <div className={styles['footer-container']}>
+          <div className={styles['footer-top']}>
+            <ul>
+              <li className={styles['footer-link-main']}><a href="#"></a>Товары</li>
+              <li><a target="_blank" href='/toy' className={styles['footer-link']}>Игры и игрушки</a></li>
+              <li><a target="_blank" href="/konstructoryi" className={styles['footer-link']}>Конструкторы</a></li>
+              <li><a target="_blank" href="/table-games" className={styles['footer-link']}>Настольные игры</a></li>
+              <li><a target="_blank" href="/elektronika" className={styles['footer-link']}>Электроника</a></li>
+              <li><a target="_blank" href="/shoes-clothes" className={styles['footer-link']}>Одежда, Обувь, Аксессуары</a></li>
+              <li><a target="_blank" href="/products-for-outdoor-activities" className={styles['footer-link']}>Товары для активного отдыха</a></li>
+            </ul>
+            <ul>
+              <li className={styles['footer-link-main']}><a href="#"></a>Помощь</li>
+              <li><a target="_blank" href="/support" className={styles['footer-link']}>Служба поддержки</a></li>
+              <li><a target="_blank" href="/dostavka-i-oplata" className={styles['footer-link']}>Оформление заказа</a></li>
+              <li><a target="_blank" href="/dostavka-i-oplata" className={styles['footer-link']}>Варианты оплаты</a></li>
+              <li><a target="_blank" href="/lk" className={styles['footer-link']}>Состояние заказа</a></li>
+              <li><a target="_blank" href="/support" className={styles['footer-link']}>Помощь при покупке</a></li>
+              <li><a target="_blank" href="/vozvrat" className={styles['footer-link']}>Возврат</a></li>
+            </ul>
+            <ul>
+              <li className={styles['footer-link-main']}><a href="#"></a>Франшиза и опт</li>
+              <li><a target="_blank" href="/support" className={styles['footer-link']}>Условия</a></li>
+              <li><a target="_blank" href="/support" className={styles['footer-link']}>Показатели</a></li>
+              <li><a target="_blank" href="/dostavka-i-oplata" className={styles['footer-link']}>Доставка</a></li>
+              <li><a target="_blank" href="/opt" className={styles['footer-link']}>Оптом</a></li>
+            </ul>
+            <ul>
+              <li className={styles['footer-link-main']}><a href="#"></a>Компания</li>
+              <li><a href="/o-nas" className={styles['footer-link']} target="_blank" >О Denco Store</a></li>
+              <li><a href="/rekvizityi" target="_blank" className={styles['footer-link']}>Реквизиты</a></li>
+              <li><a href="/bonus-info" target="_blank" className={styles['footer-link']}>Баллы DENCO</a></li>
+              <li><a href="/support" target="_blank" className={styles['footer-link']}>FAQ</a></li>
+              <li><a href="/kontakty" target="_blank" className={styles['footer-link']}>Контактная информация</a></li>
+            </ul>
+            <ul className={styles['footer-info']}>
+              <li className={styles['footer-item']}>
+                <div className={styles['footer-text']}>Позвонить нам:</div>
+                <a href="tel:+74998992545" className={styles['footer-number']}>+7 (499) 899-25-45</a>
+              </li>
+              <li className={styles['footer-item']}>
+                <div className={styles['footer-text']}>Написать нам:</div>
+                <a href="mailto:info@denco.store" className={styles['footer-number']}>info@denco.store</a>
+              </li>
+              <li className={styles['footer-item']}>
+                <div className={styles['footer-text']}>Мы в соцсетях:</div>
+                <div className={styles['footer-socials']}>
+                  <a href="https://www.instagram.com/denco.store/" className={styles['footer-social']}>
+                    <img src="images/fulfillment/instagram.svg" alt="Instagram"/>
+                  </a>
+                  <a target="_blank" className={styles['footer-social']} href="https://vk.com/dencostore">
+                    <img src="images/fulfillment/vk.svg" alt="Vk"/>
+                  </a>
+                  <a target="_blank" className={styles['footer-social']} href="https://www.facebook.com/DENCOOnlineStore">
+                    <img src="images/fulfillment/facebook.svg" alt="Facebook"/>
+                  </a>
+                  <a target="_blank" className={styles['footer-social']} href="https://www.youtube.com/c/DENCOStore">
+                    <img src="images/fulfillment/youtube.svg" alt="Youtube"/>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="bottom">
+            <div className="copy">
+              <p>ООО ДЕНКО</p>
+              <p>ОГРН 1187746697390, ИНН 7743266500</p>
+              <p>© 2015–2021. All Rights Reserved.</p>
+            </div>
+            <a href="/privacy" className={styles['footer-bottom']}>Политика конфиденциальности.</a>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
